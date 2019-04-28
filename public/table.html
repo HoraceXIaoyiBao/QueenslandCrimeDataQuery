@@ -1,0 +1,86 @@
+
+    
+   
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<!--tablesorter-->
+<link href="css/css_tablesorter_green/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery.tablesorter.js"></script>
+<script src="jPages.js"></script>
+
+
+
+<body>
+
+  
+   
+                <table id="alltable" class="tablesorter"  width="584"> 
+                    <thead> 
+                    <tr> 
+                        <th>Last Name</th> 
+                        <th>First Name</th> 
+                        <th>Email</th> 
+                        <th>Due</th> 
+                        <th>Web Site</th> 
+                    </tr> 
+                    </thead> 
+                    <tbody id="itemcontainers"> 
+                    <tr> 
+                        <td>Smith</td> 
+                        <td>John</td> 
+                        <td>jsmith@gmail.com</td> 
+                        <td>$50.00</td> 
+                        <td>http://www.jsmith.com</td> 
+                    </tr> 
+                    <tr> 
+                        <td>Bach</td> 
+                        <td>Frank</td> 
+                        <td>fbach@yahoo.com</td> 
+                        <td>$50.00</td> 
+                        <td>http://www.frank.com</td> 
+                    </tr> 
+                    <tr> 
+                        <td>Doe</td> 
+                        <td>Jason</td> 
+                        <td>jdoe@hotmail.com</td> 
+                        <td>$100.00</td> 
+                        <td>http://www.jdoe.com</td> 
+                    </tr> 
+                    <tr> 
+                        <td>Conway</td> 
+                        <td>Tim</td> 
+                        <td>tconway@earthlink.net</td> 
+                        <td>$50.00</td> 
+                        <td>http://www.timconway.com</td> 
+                    </tr> 
+                    </tbody> 
+                    </table>      
+            
+       
+                    <div class="holder">  </div>
+  </body>
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+    $("#alltable").tablesorter();     
+    $("#offencestable").tablesorter(); 
+    $("#alltable1").tablesorter();   
+
+
+    $(function(){
+          $("div.holder").jPages({
+            containerID : "itemcontainers", //存放表格的窗口标签ID
+            first:true,
+            previous : "←", //指示首页的按钮
+            next : "→",//指示尾页的按钮
+            perPage : 2,//每页显示表格的行数
+            delay : 0 //分页时动画持续时间，0表示无动画
+          });
+        });
+  }); 
+</script>
+
+<script>
+        
+        </script>
+    
