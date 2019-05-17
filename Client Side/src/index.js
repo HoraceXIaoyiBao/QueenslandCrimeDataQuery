@@ -12,8 +12,8 @@ import './App.css';
 
 
 
-const rootElement = document.getElementById("loginInput");
-  ReactDOM.render(<LoginInput />, rootElement);
+const loginpanelElement = document.getElementById("loginInput");
+  ReactDOM.render(<LoginInput />, loginpanelElement);
   
 
 const ControlPanelElement = document.getElementById("ControlPanel");

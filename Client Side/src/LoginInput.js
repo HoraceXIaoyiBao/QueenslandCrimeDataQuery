@@ -15,7 +15,7 @@ function ButtonInput()
     let password=document.getElementById("password").value;
     console.log(username);
     
-      fetch("https://cab230.hackhouse.sh/login", {
+      fetch("https://localhost/api/login", {
           method: "POST",
           body: 'email='+username+'&'+'password='+password,
           headers: {
@@ -31,17 +31,19 @@ function ButtonInput()
           .then(function(result) {
           
               let loginTitle= document.getElementById("loginTitle") ;
-              loginTitle.innerHTML="Hello! ";
+              loginTitle.innerHTML="Hello! "+username;
+
+    
 
               console.log( loginTitle.innerHTML);
 
               JWT = result.token;
               console.log(JWT);
                           
-             const SearchPanelElement = document.getElementById("SearchPanel");
-             ReactDOM.render(SearchPanel(JWT), SearchPanelElement);
+              const SearchPanelElement = document.getElementById("SearchPanel");
+              ReactDOM.render(SearchPanel(JWT), SearchPanelElement);
 
-             SearchPanelFilter()
+              SearchPanelFilter()
 
             
           })
@@ -67,7 +69,7 @@ function ButtonInput()
         }
         console.log(username);
         console.log(password);
-      fetch("https://cab230.hackhouse.sh/register", {
+      fetch("https://localhost/api/register", {
         method: "POST",
         body: 'email='+username+'&' + 'password='+password,
         //body: 'email=xxxxx%40xxxx.xxx&password=xxxxxxx', 
@@ -96,36 +98,19 @@ function ButtonInput()
     return (
 
         <div>
-          <form>
+         
 
             <p class= "loginTitle" id="loginTitle">Login</p>
+            <div id="Profile"> </div>
+              <input type="text" id="username" class="logintText" defaultValue="Username"></input>
+              <input type="password" id="password" class="logintText" defaultValue="Password"></input>
       
-            <input type="text" id="username" class="logintText" defaultValue="Username"></input>
-            <input type="password" id="password" class="logintText" defaultValue="Password"></input>
-    
-            <input type="button" id="regBtn" class="LRbutton"  onClick={Register} value="Register"></input>
-            <input type="button" id="logBtns" class="LRbutton" onClick={Login}  value="Login"></input>
-
-           </form>
+              <input type="button" id="regBtn" class="LRbutton"  onClick={Register} value="Register"></input>
+              <input type="button" id="logBtns" class="LRbutton" onClick={Login}  value="Login"></input>
+           
+ 
         </div>
          );
 }
 
 export default ButtonInput;
-
-/*
-
-         <div>
-          
-           <p class= "loginTitle" id="loginTitle">Login</p>
-     
-           <input type="text" id="username" class="logintText" defaultValue="Username"></input>
-           <input type="password" id="password" class="logintText" defaultValue="Password"></input>
-   
-           <button id="regBtn" class="LRbutton"  onClick={Register} >Register</button>
-           <button id="logBtns" class="LRbutton" onClick={Login}  >Login</button>
-         
-        </div>
-
-
-*/

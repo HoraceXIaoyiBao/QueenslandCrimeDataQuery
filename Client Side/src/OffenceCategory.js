@@ -6,7 +6,7 @@ function OffenceCategory()
     function ShowOffenceCategory()
     {
         {
-            fetch("https://cab230.hackhouse.sh/offences")
+            fetch("https://localhost/api/offences")
                 .then(function(response) {
                     if (response.ok) {
                         return response.json();
@@ -14,6 +14,7 @@ function OffenceCategory()
                     throw new Error("Network response was not ok.");
                 })
                 .then(function(result) {
+                    console.log(result);
                     ReactDOM.render(OffenceCategoryTable(result), document.getElementById('root'));
                 })
                

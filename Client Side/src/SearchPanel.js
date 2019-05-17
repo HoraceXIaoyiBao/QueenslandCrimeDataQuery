@@ -37,7 +37,7 @@ function SearchPanel(JWT)
 
             //Homicide (Murder)
             //The URL
-            const baseUrl = "https://cab230.hackhouse.sh/search?";
+            const baseUrl = "https://localhost/api/search?";
             const query = 'offence='+searchContent+queryFilter;
             const url = baseUrl + query;
  
@@ -89,7 +89,7 @@ function SearchPanel(JWT)
 
                 //Homicide (Murder)
                 //The URL
-                const baseUrl = "https://cab230.hackhouse.sh/search?";
+                const baseUrl = "https://localhost/api/search?";
                 const query = 'offence='+searchContent;
                 const url = baseUrl + query+queryFilter;
 
@@ -104,8 +104,7 @@ function SearchPanel(JWT)
                     .then(function(result) {
 
                     console.log(result);
-                
-                    console.log("fuvk");   
+           
 
                 
                     ReactDOM.render(  
@@ -151,7 +150,7 @@ function SearchPanel(JWT)
 
                 //Homicide (Murder)
                 //The URL
-                const baseUrl = "https://cab230.hackhouse.sh/search?";
+                const baseUrl = "https://localhost/api/search?";
                 const query = 'offence='+searchContent;
                 const url = baseUrl + query+queryFilter;
 

@@ -13,7 +13,7 @@ function SearchPanelFilter()
 
     
     function fetchAreaFilterdata()
-    {      fetch("https://cab230.hackhouse.sh/areas")
+    {      fetch("https://localhost/api/areas")
                 .then(function(response) {
                     if (response.ok) {
                         return response.json();
@@ -37,7 +37,7 @@ function SearchPanelFilter()
 
   
     function fetchAgeFilterdata()
-    {      fetch(" https://cab230.hackhouse.sh/ages")
+    {      fetch(" https://localhost/api/ages")
                 .then(function(response) {
                     if (response.ok) {
                         return response.json();
@@ -60,7 +60,7 @@ function SearchPanelFilter()
     }
 
     function fetchGenderFilterdata()
-    {      fetch("https://cab230.hackhouse.sh/genders")
+    {      fetch("https://localhost/api/genders")
                 .then(function(response) {
                     if (response.ok) {
                         return response.json();
@@ -82,7 +82,7 @@ function SearchPanelFilter()
                 //return result
     }
     function fetchYearFilterdata()
-    {      fetch("https://cab230.hackhouse.sh/years")
+    {      fetch("https://localhost/api/years")
                 .then(function(response) {
                     if (response.ok) {
                         return response.json();
