@@ -8,6 +8,46 @@
 #### 4/21 Front End: search with filters
 #### 4/22 Front End: Data visualisation： Bar Chart and Map
 #### 5/17 Back End: API server 
+
+#### 前端功能：
+昆士兰州犯罪记录查询网页，实现：
+ * 用户注册登陆 
+      * 检查邮箱地址
+      * 登陆时发放Token，搜索数据时要求检查Token
+ * Offences类别查询
+      * 允许未登录查询
+ * 搜索查询
+      * 不允许未登录查询，发送request时需加上Token
+      * 可以添加过滤器：area，gender,age,year
+      * 结果可视化：条形图和地图
+      
+具体搜索，过滤，检查用户名密码，检查Token由后端实现
+
+#### 后端功能：
+数据查询登陆注册API，实现 end points：
+ * https://localhost/api/register
+      * 检查request的用户名是否存在
+      * 新增用户插入数据库
+ * https://localhost/api/login
+      * 检查request的用户名密码是否存在
+      * 登陆成功JWT发放Token
+ * https://localhost/api/offences
+      * 允许无Token查询
+      * 返回所有的犯罪类别
+ * https://localhost/api/search
+      * 检查Token，不允许无Token或者非法Token查询
+      * 返回各个city council在用户搜索的犯罪类别下的记录
+      * 可以添加过滤器
+ * Filter data
+      * https://localhost/api/ages
+      * https://localhost/api/areas
+      * https://localhost/api/genders
+      * https://localhost/api/years
+      * 允许无Token查询
+      * 返回所有的过滤器选项类别
+
+## 前端功能演示：
+
 从API 获取数据装表
 Jquery tableSorter实现表头排序
 显示犯罪类别：
